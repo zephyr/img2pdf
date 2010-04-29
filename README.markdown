@@ -5,9 +5,7 @@
 
 This is a simple Java program to embed a image without any changes or recompression in a PDF (of version 1.4), particular useful for using JPEG 2000 images in LaTeX.
 
-Currently, it uses a command-line interface.
-
-## Compilation (and requirements)
+## Initial compilation (and requirements)
 At first, you’ll need to install Java 6 or later.
 
 At second, you have to download the <a href="http://sourceforge.net/projects/itext/files/">latest jar distribution of iText (version 5 or later)</a>.
@@ -15,10 +13,12 @@ At second, you have to download the <a href="http://sourceforge.net/projects/ite
 After that, you can compile with
     javac -cp .;* *.java
 
-## How to execute
-I already created some tiny bash shortcuts (for Windows and Linux), so just type
+## How to use it
+I already created some tiny bash shortcuts (for Windows and Linux):
+    img2pdf-gui
+launches a simple gui, but if you prefer the (more powerfull!) command-line interface, type
     img2pdf
-with will give you a list of valid usage examples.
+instead, with will give you a list of valid usage examples.
 
 ## Licence
 
