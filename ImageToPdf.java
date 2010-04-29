@@ -83,7 +83,7 @@ public class ImageToPdf {
             "    http://www.gnu.org/licenses/agpl-3.0.html%n" +
             "%n" +
             "You can get the source code at GitHub:%n" +
-            "    ?%n" +
+            "    ?http://github.com/zephyr/img2pdf%n" +
             "%n" +
             "Usage Examples (for producing a single pdf file -- if you want to produce%n" +
             "    several pdf files (one per image) instead, just drop the output.pdf)%n" +
