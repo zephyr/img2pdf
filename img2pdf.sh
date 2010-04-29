@@ -1,3 +1,3 @@
 #!/bin/sh
-java -cp .;* ImageToPdf $*
+java -cp .;* ImageToPdfCli $*
 exit
