@@ -1,0 +1,13 @@
+# Manual: http://www.kernel.org/pub/software/scm/git/docs/gitignore.html
+
+# Ignore generated class files:
+*.class
+
+# Ignore external libraries:
+*.jar
+
+# Ignore local backups:
+*.7z
+
+# Ignore sink folder:
+sink/
