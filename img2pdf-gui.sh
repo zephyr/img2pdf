@@ -1,3 +1,3 @@
 #!/bin/sh
-java -cp .;* ImageToPdfGui $*
+java -cp .;* ImageToPdfGui
 exit
