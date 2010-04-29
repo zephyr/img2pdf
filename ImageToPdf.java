@@ -19,7 +19,7 @@ public class ImageToPdf {
   }
   
   /** @see #wrap(File, File[]) */
-  public static void wrap(String pdfName , String... imageName) throws Exception {
+  public static void wrap(String pdfName, String... imageName) throws Exception {
     File[] imageFile = new File[imageName.length];
     for(int i=0; i<imageName.length; i++) {
       imageFile[i] = new File(imageName[i]);

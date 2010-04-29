@@ -24,24 +24,27 @@ public class ImageToPdfGui {
     frame.setLayout(new GridLayout(1, 2));
     
     frame.add(createLabel("Create single PDF files",
-      new FileDrop.Listener(){
+      new FileDrop.Listener() {
         public void filesDropped(File[] files) {
           for(File f : files) {
             try {
-              System.out.format("%s%n", f.getCanonicalPath());
-            } catch(IOException e) {}
+              ImageToPdf.wrap(f);
+            } catch(Exception e) {
+              System.err.println(e);
+            }
           }
         }
       }
     ));
     
     frame.add(createLabel("Create only one PDF file",
-      new FileDrop.Listener(){
+      new FileDrop.Listener() {
         public void filesDropped(File[] files) {
-          for(File f : files) {
-            try {
-              System.out.format("%s%n", f.getCanonicalPath());
-            } catch(IOException e) {}
+          try {
+            File out = new File(files[0].getParent(), "output.pdf");
+            ImageToPdf.wrap(out, files);
+          } catch(Exception e) {
+            System.err.println(e);
           }
         }
       }
