@@ -65,4 +65,12 @@ public class ImageToPdf {
     doc.add(image);
   }
   
+  public static void main(String... arg) throws Exception {
+    if(System.console() == null) {
+      ImageToPdfGui.main(arg);
+    } else {
+      ImageToPdfCli.main(arg);
+    }
+  }
+  
 }

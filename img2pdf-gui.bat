@@ -1,1 +1,1 @@
-java -cp .;* ImageToPdfGui
+java -cp .;* ImageToPdf -g

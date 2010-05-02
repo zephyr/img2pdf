@@ -46,6 +46,13 @@ public class ImageToPdfCli {
             "        (matches \"image 1.jpg\", ..., \"image 42.jp2\", ...)%n"
             );
         break;
+      case 1:
+        if(arg[0].equals("-g") || arg[0].equals("--gui")) {
+          ImageToPdfGui.main(arg);
+          break;
+        }
+        // fall through!
+      ImageToPdfGui.main(arg);
       case 2:
         if(arg[0].equals("-r")) {
           File[] files = matchingFiles(arg[1]);
