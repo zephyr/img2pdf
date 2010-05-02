@@ -33,8 +33,12 @@ public class ImageToPdfCli {
             "You can get the source code at GitHub:%n" +
             "    ?http://github.com/zephyr/img2pdf%n" +
             "%n" +
-            "Usage Examples (for producing a single pdf file -- if you want to produce%n" +
-            "    several pdf files (one per image) instead, just drop the output.pdf)%n" +
+            "If you prefer a simple graphical use interface instead, type%n" +
+            "    img2pdf -g%n" +
+            "%n" +
+            "Command Line Usage Examples (for producing a single pdf file -- if you%n" +
+            "    want to produce several pdf files (one per image) instead, just drop%n" +
+            "     the final output.pdf)%n" +
             "%n" +
             "    img2pdf image.jp2%n" +
             "or: img2pdf image.jp2 output.pdf%n" +
