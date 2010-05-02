@@ -27,8 +27,8 @@ public class ImageToPdfCli {
       case 0:
         System.out.format(
             "img2pdf is written by Dennis Heidsiek (in 2010) and available under the%n" +
-            "    GNU Affero General Public License version 3 (or any later version):%n" +
-            "    http://www.gnu.org/licenses/agpl-3.0.html%n" +
+            "    GNU General Public License version 3 (or any later version):%n" +
+            "    http://www.gnu.org/licenses/gpl-3.0.html%n" +
             "%n" +
             "You can get the source code at GitHub:%n" +
             "    ?http://github.com/zephyr/img2pdf%n" +
