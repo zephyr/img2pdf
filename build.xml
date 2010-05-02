@@ -1,0 +1,25 @@
+<project name="img2pdf" default="compile" basedir=".">
+  
+  <description>
+  a very simple build file for the img2pdf converter program.
+  </description>
+  
+  <!-- program specific properties -->
+  
+  <property name="p.main" value="ImageToPdf"/>
+  
+  <path id="p.lib"> <!-- Run time classpath -->
+    <fileset dir=".">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+  
+  <!-- The tasks -->
+  
+  <target name="compile" description="compile the source">
+    <javac srcdir="." destdir="." encoding="UTF-8" includeAntRuntime="false">
+      <classpath refid="p.lib"/>
+    </javac>
+  </target>
+  
+</project>
