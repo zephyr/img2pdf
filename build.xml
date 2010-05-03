@@ -8,7 +8,7 @@
   
   <property name="p.main" value="ImageToPdf"/>
   
-  <path id="p.lib"> <!-- Run time classpath -->
+  <path id="p.cp"> <!-- Run time classpath -->
     <fileset dir=".">
       <include name="**/*.jar"/>
     </fileset>
@@ -16,9 +16,16 @@
   
   <!-- The tasks -->
   
-  <target name="compile" description="compile the source">
+  <target name="clean" description="clean up the output directory">
+    <delete>
+      <fileset dir="." includes="**/*.class"/>
+      <fileset file="img2pdf.jar"/>
+    </delete>
+  </target>
+  
+  <target name="compile" depends="clean" description="compile the source">
     <javac srcdir="." destdir="." encoding="UTF-8" includeAntRuntime="false">
-      <classpath refid="p.lib"/>
+      <classpath refid="p.cp"/>
     </javac>
   </target>
   
