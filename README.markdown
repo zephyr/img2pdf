@@ -16,16 +16,17 @@ instead, with will give you a list of valid usage examples.
 
 ## For developers
 
-### Compilation (and requirements)
-At first, you’ll need to install Java 6 or later.
+### Requirements
+At first, you’ll need to install a Java 6 JDK or later.
 
-At second, you have to download the <a href="http://sourceforge.net/projects/itext/files/">latest jar distribution of iText (version 5 or later)</a>.
+At second, you have to download the <a href="http://sourceforge.net/projects/itext/files/">latest jar distribution of iText (version 5 or later)</a>. Furthermore, you may have to update the `p.lib` property inside the `build.xml`.
 
-After that, you can compile with
-    javac -cp .;* *.java
+### How to compile and execute
+If you have [Apache Ant](http://ant.apache.org/) installed, just type
+    ant dist
+to compile and to create the `img2pdf.jar` file for distribution.
 
-### How to use it
-I already created some tiny but useful bash shortcuts (for Windows and Linux):
+After that, you can use the already created tiny but useful bash shortcuts (for Windows and Linux):
     img2pdf
     img2pdf-gui
 

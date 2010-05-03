@@ -1,3 +1,3 @@
 #!/bin/sh
-java -cp .;* ImageToPdf -g
+java -jar img2pdf.jar -g
 exit
