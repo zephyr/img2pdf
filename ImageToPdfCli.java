@@ -56,7 +56,6 @@ public class ImageToPdfCli {
           break;
         }
         // fall through!
-      ImageToPdfGui.main(arg);
       case 2:
         if(arg[0].equals("-r")) {
           File[] files = matchingFiles(arg[1]);
