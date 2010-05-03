@@ -23,7 +23,7 @@ public class ImageToPdfGui {
     JPanel center = new JPanel();
     center.setLayout(new GridLayout(1, 2));
     
-    center.add(createLabel("Create single PDF files",
+    center.add(createLabel("Create several PDF files",
       new FileDrop.Listener() {
         public void filesDropped(File[] files) {
           for(File f : files) {
