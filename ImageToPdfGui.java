@@ -1,5 +1,7 @@
 import java.io.*;
+import java.net.URI;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 /**
@@ -18,12 +20,10 @@ public class ImageToPdfGui {
   }
   
   public static void main(String... arg) throws Exception {
+    JPanel center = new JPanel();
+    center.setLayout(new GridLayout(1, 2));
     
-    JFrame frame = new JFrame("img2pdf");
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    frame.setLayout(new GridLayout(1, 2));
-    
-    frame.add(createLabel("Create single PDF files",
+    center.add(createLabel("Create single PDF files",
       new FileDrop.Listener() {
         public void filesDropped(File[] files) {
           for(File f : files) {
@@ -37,7 +37,7 @@ public class ImageToPdfGui {
       }
     ));
     
-    frame.add(createLabel("Create only one PDF file",
+    center.add(createLabel("Create only one PDF file",
       new FileDrop.Listener() {
         public void filesDropped(File[] files) {
           try {
@@ -49,6 +49,21 @@ public class ImageToPdfGui {
         }
       }
     ));
+    
+    Action link = new AbstractAction("Source code (GPL3) at GitHub! – Written By Dennis Heidsiek using iText and FileDrop.") {
+        public void actionPerformed(ActionEvent e) {
+          try {
+            Desktop.getDesktop().browse(new URI("http://github.com/zephyr/img2pdf")); 
+          } catch(Exception ex) {}
+        }
+    };
+    
+    JFrame frame = new JFrame("img2pdf (supports jp2, jpg, jpc, png, …)");
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+    
+    frame.add(new JButton(link), BorderLayout.NORTH);
+    frame.add(center, BorderLayout.CENTER);
     
     frame.setSize(600,220);
     frame.setVisible(true);
