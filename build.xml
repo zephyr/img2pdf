@@ -1,4 +1,4 @@
-<project name="img2pdf" default="compile" basedir=".">
+<project name="img2pdf" default="dist" basedir=".">
   
   <description>
   a very simple build file for the img2pdf converter program.
@@ -7,6 +7,7 @@
   <!-- program specific properties -->
   
   <property name="p.main" value="ImageToPdf"/>
+  <property name="p.lib" value="iText-5.0.2.jar"/>
   
   <path id="p.cp"> <!-- Run time classpath -->
     <fileset dir=".">
@@ -27,6 +28,26 @@
     <javac srcdir="." destdir="." encoding="UTF-8" includeAntRuntime="false">
       <classpath refid="p.cp"/>
     </javac>
+  </target>
+  
+  <target name="make-jar" depends="compile" description="creates the full fat jar file for distribution">
+    <!-- Put everything into the jar file and make it executable-->
+    <jar jarfile="img2pdf.jar">
+      <fileset dir="." includes="**/*.class"/>
+      <zipfileset src="${p.lib}" prefix=""/>
+      <!--
+      <zipfileset file="${p.lib}" excludes="META-INF/"/>
+        <include name="" include="**/*"/>
+      </zipfileset>
+      -->
+      
+      <manifest>
+        <attribute name="Main-Class" value="${p.main}"/>
+      </manifest>
+    </jar>
+  </target>
+  
+  <target name="dist" depends="make-jar" description="generate the distribution">
   </target>
   
 </project>
