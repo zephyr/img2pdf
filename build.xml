@@ -13,34 +13,39 @@
     <fileset dir=".">
       <include name="**/*.jar"/>
     </fileset>
+    <fileset dir="bin"/>
   </path>
   
   <!-- The tasks -->
   
   <target name="clean" description="clean up the output directory">
-    <delete>
-      <fileset dir="." includes="**/*.class"/>
-      <fileset file="img2pdf.jar"/>
-    </delete>
+    <delete dir="bin"/>
+    <delete file="img2pdf.jar"/>
+    <mkdir dir="bin"/>
   </target>
   
   <target name="compile" depends="clean" description="compile the source">
-    <javac srcdir="." destdir="." encoding="UTF-8" includeAntRuntime="false">
+    <javac srcdir="src" destdir="bin" encoding="UTF-8" includeAntRuntime="false">
       <classpath refid="p.cp"/>
     </javac>
   </target>
   
   <target name="make-jar" depends="compile" description="creates the full fat jar file for distribution">
-    <!-- Put everything into the jar file and make it executable-->
-    <jar jarfile="img2pdf.jar">
-      <fileset dir="." includes="**/*.class"/>
-      <zipfileset src="${p.lib}" prefix=""/>
+  <!-- unzip the libraries -->
+  <unzip dest="bin">
+    <fileset dir=".">
+      <include name="**/*.jar"/>
+    </fileset>
+  </unzip>
+  
+  <!-- Put everything into the jar file and make it executable-->
+    <jar jarfile="img2pdf.jar" basedir="bin">
       <!--
+      <zipfileset src="${p.lib}" prefix=""/>
       <zipfileset file="${p.lib}" excludes="META-INF/"/>
         <include name="" include="**/*"/>
       </zipfileset>
       -->
-      
       <manifest>
         <attribute name="Main-Class" value="${p.main}"/>
       </manifest>
