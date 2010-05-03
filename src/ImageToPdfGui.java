@@ -50,7 +50,7 @@ public class ImageToPdfGui {
       }
     ));
     
-    Action link = new AbstractAction("Source code (GPL3) at GitHub! – Written By Dennis Heidsiek using iText and FileDrop.") {
+    Action link = new AbstractAction("Source code (GPL3+) at GitHub! – Written By Dennis Heidsiek using iText and FileDrop.") {
         public void actionPerformed(ActionEvent e) {
           try {
             Desktop.getDesktop().browse(new URI("http://github.com/zephyr/img2pdf")); 

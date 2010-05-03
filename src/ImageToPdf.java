@@ -65,6 +65,7 @@ public class ImageToPdf {
     doc.add(image);
   }
   
+  /* Will execute ether the gui or cli interface, depending of the environment. */
   public static void main(String... arg) throws Exception {
     if(System.console() == null) {
       ImageToPdfGui.main(arg);

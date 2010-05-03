@@ -37,15 +37,8 @@
       <include name="**/*.jar"/>
     </fileset>
   </unzip>
-  
   <!-- Put everything into the jar file and make it executable-->
     <jar jarfile="img2pdf.jar" basedir="bin">
-      <!--
-      <zipfileset src="${p.lib}" prefix=""/>
-      <zipfileset file="${p.lib}" excludes="META-INF/"/>
-        <include name="" include="**/*"/>
-      </zipfileset>
-      -->
       <manifest>
         <attribute name="Main-Class" value="${p.main}"/>
       </manifest>
