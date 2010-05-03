@@ -19,7 +19,7 @@ instead, with will give you a list of valid usage examples.
 ### Requirements
 At first, you’ll need to install a Java 6 JDK or later.
 
-At second, you have to download the <a href="http://sourceforge.net/projects/itext/files/">latest jar distribution of iText (version 5 or later)</a>. Furthermore, you may have to update the `p.lib` property inside the `build.xml`.
+At second, you have to download the <a href="http://sourceforge.net/projects/itext/files/">latest jar distribution of iText (version 5 or later)</a> and put it into the same directory as the `build.xml`.
 
 ### How to compile and execute
 If you have [Apache Ant](http://ant.apache.org/) installed, just type
