@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.regex.Pattern;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
@@ -19,12 +20,12 @@ public class ImageToPdf {
   }
   
   /** @see #wrap(File, File[]) */
-  public static void wrap(String pdfName, String... imageName) throws Exception {
-    File[] imageFile = new File[imageName.length];
-    for(int i=0; i<imageName.length; i++) {
-      imageFile[i] = new File(imageName[i]);
+  public static void wrap(String pdfName, String... imageNames) throws Exception {
+    File[] imageFiles = new File[imageNames.length];
+    for(int i=0; i<imageNames.length; i++) {
+      imageFiles[i] = new File(imageNames[i]);
     }
-    wrap(new File(pdfName), imageFile);
+    wrap(new File(pdfName), imageFiles);
   }
   
   /**
@@ -39,15 +40,27 @@ public class ImageToPdf {
   /*
    * Creates a new pdf file, embedding all given images on their own fitting pages.
    */
-  public static void wrap(File pdfFile, File... imageFile) throws Exception {
+  public static void wrap(File pdfFile, File... imageFiles) throws Exception {
+    if(imageFiles.length>1) {
+      // Sort the files alphabetical by name
+      Arrays.sort(imageFiles, new Comparator<File>() {
+        public int compare(File a, File b) {
+          if (a==b) return 0;
+          if(a.isDirectory() && b.isFile()) return -1;
+          if(a.isFile() && b.isDirectory()) return +1;
+          return a.getName().compareTo(b.getName());
+        }
+      });
+    }
+    
     System.out.format("Converting %s -> %s%n",
-      (imageFile.length==1) ? imageFile[0] : Arrays.toString(imageFile), pdfFile);
+      (imageFiles.length==1) ? imageFiles[0] : Arrays.toString(imageFiles), pdfFile);
     
     Document doc = new Document();
     PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream(pdfFile));
     
     doc.open();
-    for(File image : imageFile) {
+    for(File image : imageFiles) {
       addEmbedImage(doc, image);
     }
     doc.close();

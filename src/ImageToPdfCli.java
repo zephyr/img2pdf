@@ -31,7 +31,7 @@ public class ImageToPdfCli {
             "    http://www.gnu.org/licenses/gpl-3.0.html%n" +
             "%n" +
             "You can get the source code at GitHub:%n" +
-            "    ?http://github.com/zephyr/img2pdf%n" +
+            "    http://github.com/zephyr/img2pdf%n" +
             "%n" +
             "If you prefer a simple graphical use interface instead, type%n" +
             "    img2pdf -g%n" +
