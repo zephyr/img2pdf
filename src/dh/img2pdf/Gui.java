@@ -1,3 +1,5 @@
+package dh.img2pdf;
+
 import java.io.*;
 import java.net.URI;
 import java.awt.*;
@@ -7,7 +9,7 @@ import javax.swing.*;
 /**
  * @author Dennis Heidsiek
  */
-public class ImageToPdfGui {
+public class Gui {
 
   protected static JLabel createLabel(String title, FileDrop.Listener listener) {
     JLabel label = new JLabel(String.format(
@@ -28,7 +30,7 @@ public class ImageToPdfGui {
         public void filesDropped(File[] files) {
           for(File f : files) {
             try {
-              ImageToPdf.wrap(f);
+              Lib.wrap(f);
             } catch(Exception e) {
               System.err.println(e);
             }
@@ -42,7 +44,7 @@ public class ImageToPdfGui {
         public void filesDropped(File[] files) {
           try {
             File out = new File(files[0].getParent(), "output.pdf");
-            ImageToPdf.wrap(out, files);
+            Lib.wrap(out, files);
           } catch(Exception e) {
             System.err.println(e);
           }

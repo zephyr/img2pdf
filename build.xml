@@ -6,7 +6,7 @@
   
   <!-- program specific properties -->
   
-  <property name="p.main" value="ImageToPdf"/>
+  <property name="p.main" value="dh.img2pdf.Lib"/>
   <property name="p.lib" value="iText-5.0.2.jar"/>
   
   <path id="p.cp"> <!-- Run time classpath -->

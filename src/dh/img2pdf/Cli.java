@@ -1,3 +1,5 @@
+package dh.img2pdf;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.regex.Pattern;
@@ -7,7 +9,7 @@ import com.itextpdf.text.pdf.*;
 /**
  * @author Dennis Heidsiek
  */
-public class ImageToPdfCli {
+public class Cli {
   
   /*
    * Returns all images in the current directory whose filenames
@@ -52,7 +54,7 @@ public class ImageToPdfCli {
         break;
       case 1:
         if(arg[0].equals("-g") || arg[0].equals("--gui")) {
-          ImageToPdfGui.main(arg);
+          Gui.main(arg);
           break;
         }
         // fall through!
@@ -60,7 +62,7 @@ public class ImageToPdfCli {
         if(arg[0].equals("-r")) {
           File[] files = matchingFiles(arg[1]);
           for(File f : files) {
-            ImageToPdf.wrap(f);
+            Lib.wrap(f);
           }
           break;
         }
@@ -68,7 +70,7 @@ public class ImageToPdfCli {
       case 3:
         if(arg[0].equals("-r")) {
           File[] files = matchingFiles(arg[1]);
-          ImageToPdf.wrap(new File(arg[2]), files);
+          Lib.wrap(new File(arg[2]), files);
           break;
         }
         // fall through!
@@ -78,10 +80,10 @@ public class ImageToPdfCli {
           for(int i=0; i<images.length; i++) {
             images[i] = arg[i];
           }
-          ImageToPdf.wrap(arg[arg.length-1], images);
+          Lib.wrap(arg[arg.length-1], images);
         } else {
           for(String f : arg) {
-            ImageToPdf.wrap(f);
+            Lib.wrap(f);
           }
         }
         break;

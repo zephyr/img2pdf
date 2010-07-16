@@ -1,3 +1,4 @@
+package dh.img2pdf;
 
 import java.awt.datatransfer.DataFlavor;
 import java.io.BufferedReader;

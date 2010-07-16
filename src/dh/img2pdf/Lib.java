@@ -1,3 +1,5 @@
+package dh.img2pdf;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -12,7 +14,7 @@ import com.itextpdf.text.pdf.*;
  */
  //wrap("image.jp2");
  //wrap("C:\\User\\John Doe\\Pictures\\MyPicture.jp2");
-public class ImageToPdf {
+public class Lib {
   
   /** @see #wrap(File) */
   public static void wrap(String imageName) throws Exception {
@@ -81,9 +83,9 @@ public class ImageToPdf {
   /* Will execute ether the gui or cli interface, depending of the environment. */
   public static void main(String... arg) throws Exception {
     if(System.console() == null) {
-      ImageToPdfGui.main(arg);
+      Gui.main(arg);
     } else {
-      ImageToPdfCli.main(arg);
+      Cli.main(arg);
     }
   }
   
