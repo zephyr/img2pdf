@@ -19,14 +19,14 @@ instead, with will give you a list of valid usage examples.
 ### Shortcut for the command line
 There are also tiny but useful bash shortcuts (for Windows and Linux), so it’s even sufficient to type
     img2pdf
-It it recomended to put the `jar` together with the`bat/sh` file into a directory included in your system path, so you can use them everywhere.
+It it recomended to put the `jar` together with the `bat/sh` file into a directory included in your system path, so you can use them everywhere.
 
 ## For developers
 
 ### Requirements
 At first, you’ll need to install a Java 6 JDK or later.
 
-At second, you have to download the <a href="http://sourceforge.net/projects/itext/files/">latest jar distribution of iText (version 5 or later)</a> and put it into the same directory as the `build.xml`.
+At second, you have to download the [latest jar distribution of iText (version 5 or later)](http://sourceforge.net/projects/itext/files/) and put it into the same directory as the `build.xml`.
 
 ### How to compile and execute
 If you have [Apache Ant](http://ant.apache.org/) installed, just type
