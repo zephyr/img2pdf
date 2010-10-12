@@ -11,3 +11,8 @@ bin/
 
 # Ignore sink folder:
 sink/
+
+
+# Ignore shortcut scripts:
+img2pdf
+img2pdf.cmd

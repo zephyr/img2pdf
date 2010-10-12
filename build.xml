@@ -31,21 +31,32 @@
   </target>
   
   <target name="make-jar" depends="compile" description="creates the full fat jar file for distribution">
-  <!-- unzip the libraries -->
-  <unzip dest="bin">
-    <fileset dir=".">
-      <include name="**/*.jar"/>
-    </fileset>
-  </unzip>
-  <!-- Put everything into the jar file and make it executable-->
+    <!-- unzip the libraries -->
+    <unzip dest="bin">
+      <fileset dir=".">
+        <include name="**/*.jar"/>
+      </fileset>
+    </unzip>
+    <!-- Put everything into the jar file and make it executable-->
     <jar jarfile="img2pdf.jar" basedir="bin">
       <manifest>
         <attribute name="Main-Class" value="${p.main}"/>
       </manifest>
     </jar>
+    <chmod file="img2pdf.jar" perm="744"/>
   </target>
-  
-  <target name="dist" depends="make-jar" description="generate the distribution">
+
+  <target name="make-shortcuts" depends="make-jar" description="creates shortcut scripts for using the program on the terminal">
+    <!-- Linux -->
+    <concat destfile="img2pdf">#!/bin/sh
+java -jar img2pdf.jar "$@"</concat>
+    <chmod file="img2pdf" perm="744"/>
+
+    <!-- Windows -->
+    <concat destfile="img2pdf.cmd">java -jar img2pdf.jar %*</concat>
+  </target>
+
+  <target name="dist" depends="make-jar, make-shortcuts" description="generate the distribution">
   </target>
   
 </project>
