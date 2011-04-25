@@ -46,10 +46,10 @@ public class Cli {
             "or: img2pdf image.jp2 output.pdf%n" +
             "or: img2pdf image1.jp2 image2.jpg image3.png [...] output.pdf%n" +
             "or: img2pdf -r regular-expression-for-the-desired-filenames output.pdf%n" +
-            "as: img2pdf -r ^image.* output.pdf (all filenames who start with \"image\")%n" +
-            "as: img2pdf -r .*\\.jpg$ output.pdf (all filenames who end with \".jpg\")%n" +
-            "as: img2pdf -r \"image \\d+\\.(jpg|jp2)\" output.pdf%n" + 
-            "        (matches \"image 1.jpg\", ..., \"image 42.jp2\", ...)%n"
+            "as: img2pdf -r '^image.*' output.pdf (all filenames who start with \"image\")%n" +
+            "as: img2pdf -r '.*\\.jpg$' output.pdf (all filenames who end with \".jpg\")%n" +
+            "as: img2pdf -r 'image \\d+\\.(jpg|jp2)' output.pdf%n" + 
+            "        (matches 'image 1.jpg', ..., 'image 42.jp2', ...)%n"
             );
         break;
       case 1:
