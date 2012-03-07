@@ -24,6 +24,7 @@ public class Cli {
           });
   }
   
+  @SuppressWarnings("fallthrough") // Dear Compiler, i do know what i do ;)
   public static void main(String... arg) throws Exception {
     switch(arg.length) {
       case 0:

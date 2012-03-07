@@ -46,6 +46,8 @@ import java.io.Reader;
  * @author  rharder@users.sf.net
  * @version 1.0.1
  */
+ 
+@SuppressWarnings("unchecked")
 public class FileDrop
 {
     private transient javax.swing.border.Border normalBorder;
@@ -646,6 +648,7 @@ public class FileDrop
      * @author  rob@iharder.net
      * @version 1.2
      */
+    @SuppressWarnings("serial")
     public static class Event extends java.util.EventObject {
 
         private java.io.File[] files;

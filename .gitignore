@@ -14,5 +14,5 @@ sink/
 
 
 # Ignore shortcut scripts:
-img2pdf
-img2pdf.cmd
+/img2pdf
+/img2pdf.cmd
