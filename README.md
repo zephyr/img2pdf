@@ -26,7 +26,7 @@ It it recomended to put the `jar` together with the `bat/sh` file into a directo
 ### Requirements
 At first, you’ll need to install a Java 6 JDK or later.
 
-At second, you have to download the [latest jar distribution of iText (version 5 or later)](http://sourceforge.net/projects/itext/files/) and put it into the same directory as the `build.xml`.
+At second, you have to download the [latest jar distribution of iText (version 5.2 or later)](http://sourceforge.net/projects/itext/files/) and put it into the same directory as the `build.xml`.
 
 ### How to compile and execute
 If you have [Apache Ant](http://ant.apache.org/) installed, just type

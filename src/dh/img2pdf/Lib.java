@@ -43,6 +43,7 @@ public class Lib {
    * Creates a new pdf file, embedding all given images on their own fitting pages.
    */
   public static void wrap(File pdfFile, File... imageFiles) throws Exception {
+    //TODO: This step should be optional.
     if(imageFiles.length>1) {
       // Sort the files alphabetical by name
       Arrays.sort(imageFiles, new Comparator<File>() {
@@ -72,7 +73,7 @@ public class Lib {
   /**
    * Appends an image on a new fitting site to a existing document.
    */
-  protected static void addEmbedImage(Document doc, File imageFile) throws Exception {    
+  protected static void addEmbedImage(Document doc, File imageFile) throws Exception {
     Image image = Image.getInstance (imageFile.toURI().toURL());
     doc.setPageSize(new Rectangle(image.getPlainWidth(), image.getPlainHeight()));
     doc.setMargins(0, 0, 0, 0);
